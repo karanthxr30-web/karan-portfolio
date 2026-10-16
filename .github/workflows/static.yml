@@ -1,43 +1,91 @@
-# Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Karan Thakur's professional portfolio showcasing business analytics, technology, skills and projects.">
+<title>Karan Thakur | Portfolio</title>
 
-on:
-  # Runs on pushes targeting the default branch
-  push:
-    branches: ["main"]
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+html {
+    scroll-behavior: smooth;
+}
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b1020;
+    color: #f5f7ff;
+    line-height: 1.7;
+}
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
 
-jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v5
+header {
+    border-bottom: 1px solid #26304a;
+    background: #0b1020;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #8da8ff;
+}
+
+.navlinks {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navlinks a {
+    color: #bdc7df;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navlinks a:hover {
+    color: #8da8ff;
+}
+
+.hero {
+    min-height: 530px;
+    padding: 90px 0;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.label {
+    color: #8da8ff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 12px;
+    font
